@@ -24,8 +24,8 @@ jobs:
       with:
         python-version: "3.10"
     - name: Install dependencies
-      run: pip install -r requirements.txt
+      run: pip install -r src/requirements.txt
     - name: Test with pytest
       run: |
-        pytest tests_suma.py
-      working-directory: ./tests
+        pytest test_suma.py
+      working-directory: ./src
