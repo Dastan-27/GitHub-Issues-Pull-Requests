@@ -1,6 +1,3 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-
 name: build and test
 
 on:
@@ -24,13 +21,12 @@ jobs:
       with:
         python-version: "3.10"
     - name: Install dependencies
-      run: pip install -r src/requirements.
+      run: pip install -r src/requirements.txt
 
     - name: Check linting
-      working-directory: src
-      run: ruff check . 
-  
+      run: ruff check .
+      working-directory: ./src
+
     - name: Test with pytest
-      run: |
-        pytest test_suma.py
+      run: pytest test_suma.py
       working-directory: ./src
